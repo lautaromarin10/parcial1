@@ -1,0 +1,16 @@
+.badge {
+  padding: 0.3rem 1rem;
+  background-color: aliceblue;
+  width: fit-content;
+  border-radius: 40rem;
+  font-size: 0.8rem;
+}
+
+.badge--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.badge--gray {
+  background-color: var(--color-muted-foreground);
+}

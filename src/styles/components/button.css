@@ -1,0 +1,23 @@
+.button {
+  padding: 0.8rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transition-duration: 300ms;
+  opacity: 75%;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.button--secondary {
+  background-color: var(--color-secondary);
+}
+
+.button--gray {
+  background-color: var(--color-muted-foreground);
+}

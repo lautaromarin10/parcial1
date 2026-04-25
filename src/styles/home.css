@@ -1,0 +1,63 @@
+@import "../styles/components/aside.css";
+@import "../styles/components/productCard.css";
+@import "../styles/components/button.css";
+@import "../styles/components/emptyResults.css";
+
+.main {
+  display: flex;
+  margin: 7rem 0rem;
+  gap: 1rem;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+.main__content__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.filters__wrappers {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.filter__input {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border: none;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-primary);
+  max-width: 300px;
+}
+
+.filter__input:focus {
+  outline: 1px solid var(--color-primary);
+}
+
+.product__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .product__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

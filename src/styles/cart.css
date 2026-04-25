@@ -1,0 +1,140 @@
+@import "../styles/components/productCard.css";
+@import "../styles/components/button.css";
+@import "../styles//components/emptyResults.css";
+
+.main {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.title__container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.cart__container,
+.cart__product__container,
+.cart__resume {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.cart__resume {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: bla;
+  padding: 1rem;
+  background-color: var(--color-card);
+}
+
+.cart__resume__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__products__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.cart__products__item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0.8rem;
+  background-color: white;
+}
+
+.cart__products__item__info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem;
+}
+
+.cart__product__title {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
+
+.cart__products__item > img {
+  width: 30%;
+  min-height: 50px;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.cart__product__item__resume {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cart__product__item__price {
+  font-size: 0.8rem;
+}
+
+.cart__resume__total__container {
+  display: flex;
+  padding: 1rem 0.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .cart__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cart__product__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cart__product__container {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cart__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cart__product__container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
+  }
+}
+
+.scroll-mask {
+  /* Standard overflow properties */
+  overflow-y: auto;
+  max-height: 400px;
+
+  /* Mask to create fade at top and bottom */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+
+  /* Required for WebKit browsers like Chrome/Safari */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}

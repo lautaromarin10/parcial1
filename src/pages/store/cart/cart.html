@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito | FoodStore</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+    <link rel="stylesheet" href="../../../styles/cart.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content container mx-auto">
+        <a href="../home/home.html" class="logo">FoodStore</a>
+        <div class="header__links__wrapper">
+          <ul class="links__list">
+            <li class="links__element">
+              <a
+                class="link button rounded"
+                href="/src/pages/store/cart/cart.html"
+                >Carrito</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main container mx-auto">
+      <section class="title__container">
+        <h1 class="h1">Carrito actual</h1>
+      </section>
+      <section class="cart__container" id="cartContainer">
+        <div class="cart__product__container" id="cartProductContainer"></div>
+        <div id="cartResumeContainer" class="cart__resume rounded"></div>
+      </section>
+    </main>
+    <script src="./cart.ts" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | FoodStore</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+    <link rel="stylesheet" href="../../../styles/home.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content container mx-auto">
+        <a href="../home/home.html" class="logo">FoodStore</a>
+        <div class="header__links__wrapper">
+          <ul class="links__list">
+            <li class="links__element">
+              <a
+                class="link button rounded"
+                href="/src/pages/store/cart/cart.html"
+                >Carrito</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <aside class="aside" id="asideContent" aria-expanded="false">
+        <button class="button rounded" id="closeAsideButton">
+          <img src="../../../../chevronLeft.svg" class="icon" />
+          Cerrar
+        </button>
+        <div class="aside__content">
+          <div class="aside__title__container">
+            <h2>Categorías</h2>
+            <p>Filtrar por categorías</p>
+          </div>
+          <div class="aside__category__wrapper">
+            <ul class="aside__category__list" id="categoriesContainer">
+              <li class="button category__item rounded" aria-selected="true">
+                Ver todo
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <section class="main__content container mx-auto">
+        <div class="main__content__inner">
+          <section class="filters__wrappers">
+            <button class="button button--primary rounded" id="openAsideButton">
+              Filtrar por categorías
+            </button>
+            <input
+              class="filter__input rounded"
+              id="filterInput"
+              placeholder="Buscar productos..."
+            />
+          </section>
+          <section id="productContainer" class="product__container"></section>
+        </div>
+      </section>
+    </main>
+    <div class="modal__wrapper" id="modalWrapper">
+      <div class="modal rounded" id="modalMessageContainer"></div>
+    </div>
+    <script src="./home.ts" type="module"></script>
+  </body>
+</html>

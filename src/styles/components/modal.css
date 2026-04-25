@@ -1,0 +1,25 @@
+.modal__wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal--success {
+  background-color: var(--color-success);
+}
+
+.modal--error {
+  background-color: var(--color-error);
+  color: white;
+}

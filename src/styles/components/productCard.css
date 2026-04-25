@@ -1,0 +1,43 @@
+.product__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__card .badge {
+  margin-bottom: 0.3rem;
+}
+
+.product__image {
+  width: 100%;
+  margin-bottom: 1rem;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.product__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__title {
+  margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+}
+
+.product__price {
+  font-size: 1.2rem;
+}
+
+.product__description {
+  color: black;
+  opacity: 50%;
+  line-clamp: 2;
+}
+
+.product__actions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

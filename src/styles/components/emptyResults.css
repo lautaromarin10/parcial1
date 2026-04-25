@@ -1,0 +1,25 @@
+.empty__result {
+  width: 100%;
+  height: 300px;
+  background-color: var(--color-muted-foreground);
+  grid-column: 1 / -1;
+}
+
+.empty__result__content {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.empty__title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty__button {
+  margin-top: 0.5rem;
+}
