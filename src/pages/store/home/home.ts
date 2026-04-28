@@ -129,7 +129,7 @@ export const cleanModal = () => {
   }
 };
 
-let modalTimer: number;
+let modalTimer: ReturnType<typeof setTimeout>;
 
 export const renderModalMessage = (
   message: string,
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //ADDEVENTSLISTENERS
 
-let debounceTimer: number;
+let debounceTimer: ReturnType<typeof setTimeout>;
 
 filterInput?.addEventListener("keyup", (e) => {
   const input = e.target as HTMLInputElement;
