@@ -129,18 +129,22 @@ export const cleanModal = () => {
   }
 };
 
+let modalTimer: number;
+
 export const renderModalMessage = (
   message: string,
+
   status: modalStatus = "SUCCESS",
+
   exitTime: number = 3000,
 ) => {
   if (!modalWrapper) return;
-
   cleanModal();
 
-  modalWrapper.innerHTML = modalContent(message, status);
+  clearTimeout(modalTimer);
 
-  setTimeout(() => {
+  modalWrapper.innerHTML = modalContent(message, status);
+  modalTimer = setTimeout(() => {
     cleanModal();
   }, exitTime);
 };
@@ -182,19 +186,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //ADDEVENTSLISTENERS
 
+let debounceTimer: number;
+
 filterInput?.addEventListener("keyup", (e) => {
   const input = e.target as HTMLInputElement;
+  clearTimeout(debounceTimer);
 
-  const filterProductsByName = PRODUCTS.filter((product: product) => {
-    return product.nombre.toLowerCase().includes(input.value.toLowerCase());
-  });
+  debounceTimer = setTimeout(() => {
+    const filterProductsByName = PRODUCTS.filter((product: product) => {
+      return product.nombre.toLowerCase().includes(input.value.toLowerCase());
+    });
 
-  if (filterProductsByName.length === 0 && productContainer) {
-    productContainer.innerHTML = emptyResults();
-    return;
-  }
+    if (filterProductsByName.length === 0 && productContainer) {
+      productContainer.innerHTML = emptyResults();
+      return;
+    }
 
-  renderProducts(filterProductsByName);
+    renderProducts(filterProductsByName);
+  }, 300);
 });
 
 categoriesContainer?.addEventListener("click", (e) => {

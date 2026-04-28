@@ -13,6 +13,7 @@
   align-items: center;
   padding: 1rem 1rem;
   margin-bottom: 1rem;
+  animation: fade-in 300ms ease-in;
 }
 
 .modal--success {

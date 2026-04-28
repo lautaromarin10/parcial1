@@ -26,6 +26,17 @@ a.button {
   text-decoration: none;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
 :root {
   --color-card: #fafafa;
   --color-primary: #e85d04;

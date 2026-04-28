@@ -2,6 +2,7 @@
   padding: 0.8rem 1rem;
   border: none;
   cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .button:hover {

@@ -1,6 +1,7 @@
 .product__card {
   display: flex;
   flex-direction: column;
+  animation: fade-in 300ms ease;
 }
 
 .product__card .badge {

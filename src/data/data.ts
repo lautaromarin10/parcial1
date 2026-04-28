@@ -82,7 +82,8 @@ export const PRODUCTS: product[] = [
     precio: 6800.0,
     descripcion: "Muzzarella, provolone, roquefort y parmesano",
     stock: 10,
-    imagen: "https://www.novachef.es/media/images/pizza-cuatro-quesos.jpg",
+    imagen:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnKYNeGpt27tRyqzbirhQjE2v6D-tze7WYeg&s",
     disponible: true,
     categorias: [categorias[0]],
   },
