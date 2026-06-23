@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../styles/global.css" />
+    <title>Registro | FoodStore</title>
+  </head>
+  <body>
+    <main class="h-screen container mx-auto flex items-center">
+      <div
+        class="min-w-120 max-w-200 ring bg-card shadow-md flex flex-col ring-muted-foreground rounded-md p-8 mx-auto h-fit"
+      >
+        <h1 class="text-3xl">Registro</h1>
+        <form id="registerForm" class="my-4 flex flex-col">
+          <div class="flex mb-2 gap-2 flex-wrap">
+            <div class="flex flex-col flex-1">
+              <label for="nombre" class="mb-1">Nombre completo</label>
+              <input
+                id="nombre"
+                name="nombre"
+                class="p-3 ring rounded-md ring-muted-foreground mb-2 bg-white"
+                type="text"
+                placeholder="Nombre"
+              />
+            </div>
+            <div class="flex flex-col flex-1">
+              <label for="apellido" class="mb-1">Apellido</label>
+              <input
+                id="apellido"
+                name="apellido"
+                class="p-3 ring rounded-md ring-muted-foreground mb-2 bg-white"
+                type="text"
+                placeholder="Apellido"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col mb-2">
+            <label for="correo" class="mb-1">Correo electrónico</label>
+            <input
+              id="correo"
+              name="email"
+              class="p-3 ring rounded-md ring-muted-foreground mb-2 bg-white"
+              type="email"
+              placeholder="Correo electrónico"
+            />
+          </div>
+          <div class="flex flex-col mb-2">
+            <label for="pass" class="mb-1">Contraseña</label>
+            <input
+              id="pass"
+              class="p-3 ring rounded-md ring-muted-foreground mb-2 bg-white"
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+            />
+          </div>
+          <button type="submit" class="button primary w-fit">
+            Registrarse
+          </button>
+        </form>
+        <div id="errorContainer" class="mb-2"></div>
+        <p>
+          Ya tienes cuenta?
+          <a
+            href="/src/pages/auth/login/login.html"
+            class="text-primary underline!"
+            >Iniciar sesión</a
+          >
+        </p>
+      </div>
+    </main>
+    <script type="module" src="register.ts"></script>
+  </body>
+</html>

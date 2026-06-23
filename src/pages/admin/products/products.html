@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | FoodStore</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+  </head>
+  <body>
+    <header
+      class="h-20 w-screen bg-card z-50 top-0 border-b border-muted-foreground flex flex-row items-center sticky"
+    >
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/src/pages/store/home/home.html" class="text-xl">FoodStore</a>
+        <div id="headerActions"></div>
+      </div>
+    </header>
+    <main class="flex flex-col lg:flex-row h-[calc(100vh-80px)]">
+      <aside class="w-full lg:w-1/6 p-4 lg:h-full!">
+        <div
+          class="flex ring-2 w-full ring-muted-foreground p-4 h-full rounded-md flex-col"
+        >
+          <div class="flex flex-col w-full">
+            <h2 class="text-xl">Administración</h2>
+            <p>Panel de control</p>
+            <ul
+              class="flex flex-col my-4 w-full [&>li]:h-fit [&>li]:my-1.5 [&>li>a]:text-center"
+            >
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/adminHome/adminHome.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Dashboard</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/categories/categories.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Categorías</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/products/products.html"
+                  class="button ring-primary ring w-full block text-left"
+                  >Productos</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/orders/orders.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Pedidos</a
+                >
+              </li>
+            </ul>
+            <a
+              class="button primary w-fit"
+              href="/src/pages/store/home/home.html"
+              >Ir a la tienda</a
+            >
+          </div>
+        </div>
+      </aside>
+      <section class="w-full lg:w-5/6 p-4">
+        <div class="mb-4 flex items-center justify-between">
+          <h1 class="text-2xl">Gestión de productos</h1>
+          <button
+            type="button"
+            class="button primary"
+            data-action="create-product"
+          >
+            Nuevo producto
+          </button>
+        </div>
+        <table
+          id="productsTable"
+          class="w-full table-auto rounded-md! ring ring-muted-foreground md:table-fixed"
+        >
+          <thead>
+            <tr
+              class="border-b border-muted-foreground *:px-2 *:h-10 divide-x *:border-muted-foreground"
+            >
+              <th class="text-start">ID</th>
+              <th class="text-start">Imagen</th>
+              <th class="text-start">Nombre</th>
+              <th class="text-start">Descripción</th>
+              <th class="text-start">Precio</th>
+              <th class="text-start">Categoría</th>
+              <th class="text-start">Stock</th>
+              <th class="text-start">Estado</th>
+              <th class="text-start">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <div
+      id="productModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4"
+    >
+      <div
+        class="w-full max-w-2xl mx-auto mt-20 rounded-lg bg-white p-6 shadow-xl"
+      >
+        <div class="mb-4 flex items-center justify-between">
+          <h2 id="productModalTitle" class="text-xl">Nuevo producto</h2>
+          <button
+            type="button"
+            id="closeProductModal"
+            class="button button--small secondary"
+          >
+            ✕
+          </button>
+        </div>
+        <form id="productForm" class="grid gap-4 md:grid-cols-2">
+          <input type="hidden" id="productId" />
+          <label class="flex flex-col gap-1 md:col-span-2">
+            <span>Nombre</span>
+            <input
+              id="productNombre"
+              name="nombre"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+              required
+            />
+          </label>
+          <label class="flex flex-col gap-1 md:col-span-2">
+            <span>Descripción</span>
+            <textarea
+              id="productDescripcion"
+              name="descripcion"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+              rows="3"
+              required
+            ></textarea>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Precio</span>
+            <input
+              id="productPrecio"
+              name="precio"
+              type="number"
+              min="1"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+              required
+            />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Stock</span>
+            <input
+              id="productStock"
+              name="stock"
+              type="number"
+              min="0"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+              required
+            />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Categoría</span>
+            <select
+              id="productCategoryId"
+              name="categoriaId"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+            ></select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span>Imagen</span>
+            <input
+              id="productImagen"
+              name="imagen"
+              class="rounded-md border border-muted-foreground px-3 py-2"
+              required
+            />
+          </label>
+          <label class="flex items-center gap-2 md:col-span-2">
+            <input id="productDisponible" name="disponible" type="checkbox" />
+            <span>Disponible</span>
+          </label>
+          <div class="flex justify-end gap-2 md:col-span-2">
+            <button
+              type="button"
+              id="cancelProductModal"
+              class="button secondary"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="button primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="products.ts" type="module"></script>
+  </body>
+</html>

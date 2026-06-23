@@ -1,38 +1,69 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito | FoodStore</title>
     <link rel="stylesheet" href="../../../styles/global.css" />
-    <link rel="stylesheet" href="../../../styles/cart.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header__content container mx-auto">
-        <a href="../home/home.html" class="logo">FoodStore</a>
-        <div class="header__links__wrapper">
-          <ul class="links__list">
-            <li class="links__element">
-              <a
-                class="link button rounded"
-                href="/src/pages/store/cart/cart.html"
-              >
-                <img src="/cart.svg" alt="Carrito de compras" class="icon" />
-                Carrito</a
-              >
-            </li>
-          </ul>
-        </div>
+    <header
+      class="h-20 w-screen bg-card z-50 top-0 border-b border-muted-foreground flex flex-row items-center sticky"
+    >
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/src/pages/store/home/home.html" class="text-xl">FoodStore</a>
+        <div id="headerActions"></div>
       </div>
     </header>
-    <main class="main container mx-auto">
-      <section class="title__container">
-        <h1 class="h1">Carrito actual</h1>
+    <main class="mt-8 container mx-auto">
+      <section class="flex flex-col mb-4">
+        <h1 class="text-xl">Carrito actual</h1>
       </section>
-      <section class="cart__container" id="cartContainer">
-        <div class="cart__product__container" id="cartProductContainer"></div>
-        <div id="cartResumeContainer" class="cart__resume rounded"></div>
+      <section
+        class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        id="cartContainer"
+      >
+        <div
+          class="grid sm:col-span-1 gap-4 lg:col-span-3 grid-cols-1 lg:grid-cols-3"
+          id="cartProductContainer"
+        ></div>
+        <div class="flex flex-col gap-4 sm:col-span-1">
+          <div id="cartResumeContainer" class="rounded"></div>
+          <form
+            id="cartForm"
+            class="flex flex-col gap-3 rounded-md border border-muted-foreground p-4"
+          >
+            <h2 class="text-lg font-semibold">Datos de entrega</h2>
+            <input
+              type="text"
+              class="px-3 py-2 ring ring-muted-foreground rounded-md"
+              placeholder="Nombre y apellido"
+              required
+            />
+            <input
+              type="email"
+              class="px-3 py-2 ring ring-muted-foreground rounded-md"
+              placeholder="Correo electrónico"
+              required
+            />
+            <input
+              type="tel"
+              class="px-3 py-2 ring ring-muted-foreground rounded-md"
+              placeholder="Teléfono"
+              required
+            />
+            <input
+              type="text"
+              class="px-3 py-2 ring ring-muted-foreground rounded-md"
+              placeholder="Dirección"
+              required
+            />
+            <p id="checkoutError" class="text-sm text-error"></p>
+            <button type="submit" class="button primary">
+              Confirmar pedido
+            </button>
+          </form>
+        </div>
       </section>
     </main>
     <script src="./cart.ts" type="module"></script>

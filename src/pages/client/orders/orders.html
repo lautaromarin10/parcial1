@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+  </head>
+  <body>
+    <header
+      class="h-20 w-screen bg-card z-50 top-0 border-b border-muted-foreground flex flex-row items-center sticky"
+    >
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/src/pages/store/home/home.html" class="text-xl">FoodStore</a>
+        <div id="headerActions"></div>
+      </div>
+    </header>
+    <main class="container mx-auto mt-8">
+      <h1 class="text-2xl">Mis pedidos</h1>
+      <div id="ordersContainer" class="flex flex-col mt-8 gap-4">
+        <div
+          class="flex ring-2 flex-col min-h-60 justify-center items-center ring-muted-foreground p-8 rounded-md"
+        >
+          <h2 class="text-xl mb-2">Aún no realizaste ningún pedido</h2>
+          <p class="mb-4">
+            Explorá nuestro catálogo y encontrá los productos que estás
+            buscando.
+          </p>
+          <a href="/src/pages/store/home/home.html" class="button primary"
+            >Realizar un pedido</a
+          >
+        </div>
+      </div>
+    </main>
+    <div class="modal__wrapper" id="modalWrapper" style="display: none">
+      <div class="modal rounded" id="orderDetailContainer"></div>
+    </div>
+    <script type="module" src="orders.ts"></script>
+  </body>
+</html>

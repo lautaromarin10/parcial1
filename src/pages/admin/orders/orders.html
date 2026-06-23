@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordenes | FoodStore</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+  </head>
+  <body>
+    <header
+      class="h-20 w-screen bg-card z-50 top-0 border-b border-muted-foreground flex flex-row items-center sticky"
+    >
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/src/pages/store/home/home.html" class="text-xl">FoodStore</a>
+        <div id="headerActions"></div>
+      </div>
+    </header>
+    <main class="flex flex-col lg:flex-row h-[calc(100vh-80px)]">
+      <aside class="w-full lg:w-1/6 p-4 lg:h-full!">
+        <div
+          class="flex ring-2 w-full ring-muted-foreground p-4 h-full rounded-md flex-col"
+        >
+          <div class="flex flex-col w-full">
+            <h2 class="text-xl">Administración</h2>
+            <p>Panel de control</p>
+            <ul
+              class="flex flex-col my-4 w-full [&>li]:h-fit [&>li]:my-1.5 [&>li>a]:text-center"
+            >
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/adminHome/adminHome.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Dashboard</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/categories/categories.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Categorías</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/products/products.html"
+                  class="button ring-muted-foreground ring w-full block text-left"
+                  >Productos</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  href="/src/pages/admin/orders/orders.html"
+                  class="button ring-primary ring w-full block text-left"
+                  >Pedidos</a
+                >
+              </li>
+            </ul>
+            <a
+              class="button primary w-fit"
+              href="/src/pages/store/home/home.html"
+              >Ir a la tienda</a
+            >
+          </div>
+        </div>
+      </aside>
+      <section class="w-full lg:w-5/6 p-4">
+        <div class="mb-4 flex flex-row items-center justify-between gap-4">
+          <h1 class="text-2xl">Gestión de Ordenes</h1>
+          <label class="flex items-center gap-2 text-sm">
+            <span>Estado</span>
+            <select
+              id="statusFilter"
+              class="rounded-md border border-muted-foreground bg-white px-3 py-2"
+            >
+              <option value="TODOS">Todos</option>
+              <option value="PENDIENTE">Pendiente</option>
+              <option value="EN_PREPARACION">En preparación</option>
+              <option value="ENTREGADO">Entregado</option>
+              <option value="CANCELADO">Cancelado</option>
+            </select>
+          </label>
+        </div>
+        <div id="ordersContainer" class="mt-8 flex flex-col gap-4">
+          <div
+            class="flex min-h-60 flex-col items-center justify-center rounded-md p-8 ring-2 ring-muted-foreground"
+          >
+            <h2 class="mb-2 text-xl">Actualmente no hay ningún pedido</h2>
+            <a
+              href="/src/pages/admin/adminHome/adminHome.html"
+              class="button primary"
+              >Volver al Dashboard</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      id="modalWrapper"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4"
+      style="display: none"
+    >
+      <div id="orderDetailContainer" class="w-full max-w-2xl"></div>
+    </div>
+    <script type="module" src="orders.ts"></script>
+  </body>
+</html>

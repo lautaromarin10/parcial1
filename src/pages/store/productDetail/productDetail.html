@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle del producto | FoodStore</title>
+    <link rel="stylesheet" href="../../../styles/global.css" />
+  </head>
+  <body>
+    <header
+      class="h-20 w-screen bg-card z-50 top-0 border-b border-muted-foreground flex flex-row items-center sticky"
+    >
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/src/pages/store/home/home.html" class="text-xl">FoodStore</a>
+        <div id="headerActions"></div>
+      </div>
+    </header>
+    <main id="productWrapper"></main>
+    <div class="modal__wrapper" id="modalWrapper">
+      <div class="modal rounded" id="modalMessageContainer"></div>
+    </div>
+    <script src="./productDetail.ts" type="module"></script>
+  </body>
+</html>

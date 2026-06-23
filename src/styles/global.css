@@ -1,29 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
-@import "../styles/components/header.css";
-@import "../styles/components/button.css";
-@import "../styles/components/badge.css";
 @import "../styles/components/modal.css";
-
-.container {
-  max-width: 1300px;
-  padding: 0px 2rem;
-}
-
-.mx-auto {
-  margin: auto;
-}
-
-.rounded {
-  border-radius: 12px;
-}
+@import "tailwindcss";
 
 .icon {
   width: 0.7rem;
   height: 0.7rem;
-}
-
-a.button {
-  text-decoration: none;
 }
 
 @keyframes fade-in {
@@ -37,7 +18,7 @@ a.button {
   }
 }
 
-:root {
+@theme {
   --color-card: #fafafa;
   --color-primary: #e85d04;
   --color-secondary: #03071e;
@@ -55,6 +36,28 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  padding: 0;
-  margin: 0;
+}
+
+.container.mx-auto {
+  @apply px-2;
+}
+
+.button {
+  @apply px-4 py-2 rounded-md hover:opacity-70 cursor-pointer duration-300;
+}
+
+.button--small {
+  @apply px-2.5 py-1.5 text-sm;
+}
+
+.badge {
+  @apply rounded-full h-7 px-4 flex items-center w-fit text-sm;
+}
+
+.primary {
+  @apply text-white bg-primary;
+}
+
+.secondary {
+  @apply text-white bg-secondary;
 }

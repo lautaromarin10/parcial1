@@ -4,7 +4,9 @@ Alumno: Lautaro Marin
 
 ## Descripción
 
-Este proyecto es una aplicación web desarrollada como parte del primer parcial de Programación 3. La aplicación implementa la función de busqueda de productos, filtro por categorías y carrito con persistencia utilizando Localstorage.
+Este proyecto es una aplicación web desarrollada como parte del primer parcial de Programación 3. La aplicación implementa la función de búsqueda de productos, filtro por categorías, carrito con persistencia utilizando Localstorage y un resumen de pedido con envío fijo.
+
+> Nota: el costo de envío está definido en el frontend como una constante fija (`ENVIO = 2500`) en la vista del carrito. Este valor puede ajustarse fácilmente si se desea cambiar la política de envíos.
 
 ## Tecnologías utilizadas
 
